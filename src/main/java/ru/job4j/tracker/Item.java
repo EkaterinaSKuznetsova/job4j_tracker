@@ -40,4 +40,8 @@ public class Item {
     public LocalDateTime getCreated() {
         return this.created;
     }
+
+    public void setCreated(LocalDateTime date) {
+        this.created = date;
+    }
 }

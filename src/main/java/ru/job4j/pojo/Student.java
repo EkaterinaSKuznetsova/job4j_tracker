@@ -5,6 +5,7 @@ import java.util.Date;
 public class Student {
     private String fio;
     private int numberGroup;
+    private Date start;
 
     public Date getStart() {
         return start;
@@ -14,9 +15,7 @@ public class Student {
         this.start = start;
     }
 
-    private Date start;
-
-    public String getFio() {
+   public String getFio() {
         return fio;
     }
 

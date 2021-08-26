@@ -39,6 +39,7 @@ public class Tracker {
         for (int index = 0; index < size; index++) {
             if (items[index].getId() == id) {
                 rsl = index;
+                break;
             }
         }
         return rsl;
@@ -48,8 +49,8 @@ public class Tracker {
         boolean result = false;
         int index = indexOf(id);
         if (index != -1) {
-            items[index].setName(item.getName());
-            items[index].setCreated(item.getCreated());
+            item.setId(id);
+            items[index] = item;
             result = true;
         }
         return result;

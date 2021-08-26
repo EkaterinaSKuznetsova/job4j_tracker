@@ -30,5 +30,4 @@ public class Engineer extends Profession {
     public void work() {
 
     }
-
 }

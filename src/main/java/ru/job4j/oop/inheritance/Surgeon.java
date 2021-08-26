@@ -24,5 +24,4 @@ public class Surgeon extends Doctor {
     public void surgicalTreatment(Pacient pacient) {
 
     }
-
 }

@@ -15,5 +15,4 @@ public class Doctor extends Profession {
     public String diagnosticHeal(Pacient pacient) {
         return this.diagnoz;
     }
-
 }

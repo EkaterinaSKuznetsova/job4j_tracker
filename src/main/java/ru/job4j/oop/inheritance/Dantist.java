@@ -42,5 +42,4 @@ public class Dantist extends Doctor {
     public void dentalTreatment(Pacient pacient) {
 
     }
-
 }

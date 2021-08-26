@@ -1,8 +1,9 @@
 package ru.job4j.oop.inheritance;
 
 public class Programmer extends Engineer {
-    public Programmer(String name, String surname, String education, String birthday) {
-        super(name, surname, education, birthday);
+    public Programmer(String name, String surname, String education, String birthday,
+                      String company, String position) {
+        super(name, surname, education, birthday, company, position);
     }
 
     public Program programming() {

@@ -4,8 +4,11 @@ public class Engineer extends Profession {
     private String company;
     private String position;
 
-    public Engineer(String name, String surname, String education, String birthday) {
+    public Engineer(String name, String surname, String education, String birthday,
+                    String company, String position) {
         super(name, surname, education, birthday);
+        this.company = company;
+        this.position = position;
     }
 
     public void setCompany(String company) {

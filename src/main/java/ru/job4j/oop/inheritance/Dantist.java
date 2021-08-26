@@ -4,8 +4,11 @@ public class Dantist extends Doctor {
     private int numberRoom;
     private String assistent;
 
-    public Dantist(String name, String surname, String education, String birthday) {
-        super(name, surname, education, birthday);
+    public Dantist(String name, String surname, String education, String birthday, String diagnoz,
+                   int numberRoom, String assistent) {
+        super(name, surname, education, birthday, diagnoz);
+        this.assistent = assistent;
+        this.numberRoom = numberRoom;
     }
 
     public void setNumberRoom(int number) {

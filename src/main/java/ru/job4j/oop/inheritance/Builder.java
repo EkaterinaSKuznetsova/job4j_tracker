@@ -3,8 +3,10 @@ package ru.job4j.oop.inheritance;
 public class Builder extends Engineer {
     private String objectBuilder;
 
-    public Builder(String name, String surname, String education, String birthday) {
-        super(name, surname, education, birthday);
+    public Builder(String name, String surname, String education, String birthday,
+                   String company, String position, String objectBuilder) {
+        super(name, surname, education, birthday, company, position);
+        this.objectBuilder = objectBuilder;
     }
 
     public void setObjectBuilder(String objectBuilder) {

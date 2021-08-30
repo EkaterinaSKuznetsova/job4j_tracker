@@ -42,7 +42,7 @@ public class StartUI {
                 }
             } else if (select == 3) {
                 System.out.println("==== Delete item ====");
-                System.out.println("enter id: ");
+                System.out.print("enter id: ");
                 int id = Integer.parseInt(scanner.nextLine());
                 if (tracker.delete(id)) {
                     System.out.println("Заявка удалена.");

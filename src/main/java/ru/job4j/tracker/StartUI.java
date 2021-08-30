@@ -9,11 +9,11 @@ public class StartUI {
         boolean run = true;
         while (run) {
             showMenu();
-            System.out.println("Select:  ");
+            System.out.print("Select:  ");
             int select = Integer.parseInt(scanner.nextLine());
             if (select == 0) {
                 System.out.println("==== Create a new Item ====");
-                System.out.println("Enter name:  ");
+                System.out.print("Enter name:  ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.add(item);

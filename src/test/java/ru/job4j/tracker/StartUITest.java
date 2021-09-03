@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import org.hamcrest.core.IsNull;
+import static org.hamcrest.Matchers.nullValue;
 import org.junit.Test;
 
 import java.util.Scanner;
@@ -31,4 +33,30 @@ public class StartUITest {
 
     }
 
+    @Test
+    public void whenReplaceItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("new item");
+        tracker.add(item);
+        String[] answers = {
+                String.valueOf(item.getId()), /* id сохраненной заявки в объект tracker. */
+                "replaced item"
+        };
+        StartUI.replaceItem(new StubInput(answers), tracker);
+        Item replaced = tracker.findById(item.getId());
+        assertThat(replaced.getName(), is("replaced item"));
+    }
+
+    @Test
+    public void deleteItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("new item");
+        tracker.add(item);
+        String[] answers = {
+                String.valueOf(item.getId()),
+                item.getName()
+        };
+        StartUI.deleteItem(new StubInput(answers), tracker);
+        assertThat(tracker.findById(item.getId()), is(nullValue()));
+    }
 }

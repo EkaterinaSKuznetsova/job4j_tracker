@@ -32,30 +32,24 @@ public class ValidateInputTest {
     @Test
     public void whenManyValidInput() {
         Output out = new StubOutput();
-        String[] inMassiv = new String[] {"4", "5", "6"};
-        Input in = new StubInput(inMassiv);
+        Input in = new StubInput(new String[] {"4", "5", "6"});
         ValidateInput input = new ValidateInput(out, in);
-        for (int i = 0; i < inMassiv.length; i++) {
-            int selected = input.askInt("Enter menu:");
-            assertThat(selected, is(Integer.parseInt(inMassiv[i])));
-        }
-  /*      int selected = input.askInt("Enter menu:");
+        int selected = input.askInt("Enter menu:");
         assertThat(selected, is(4));
         selected = input.askInt("Enter menu:");
         assertThat(selected, is(5));
         selected = input.askInt("Enter menu:");
-        assertThat(selected, is(6));*/
+        assertThat(selected, is(6));
     }
 
     @Test
     public void whenInputLessZero() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"-1", "6"}
+                new String[] {"-1"}
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
-        assertThat(out.toString(), is("Please enter validate data again."
-                + System.lineSeparator()));
+        assertThat(selected, is(-1));
     }
 }

@@ -98,7 +98,8 @@ public class StartUITest {
     public void whenShowAllItemWhenOneItem() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        Item item = tracker.add(new Item("First item"));
+        String name = "First item";
+        Item item = tracker.add(new Item(name));
         Input in = new StubInput(
                 new String[] {"0", "1"}
         );
@@ -111,9 +112,7 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() + "0. Show all items" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
                         + "==== Show all items ====" + System.lineSeparator()
-                        + "Item{id=" + item.getId() + ", name='" + item.getName()
-                        + "', created=" + item.getCreated()
-                        + "}" + System.lineSeparator()
+                        + item + System.lineSeparator()
                         + "Menu." + System.lineSeparator() + "0. Show all items"
                         + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
@@ -124,7 +123,8 @@ public class StartUITest {
     public void whenFindItemByIdYes() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        Item item = tracker.add(new Item("First item"));
+        String name = "First item";
+        Item item = tracker.add(new Item(name));
         Input in = new StubInput(
                 new String[] {"0", String.valueOf(item.getId()), "1"}
         );
@@ -137,9 +137,7 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() + "0. Find item by id" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
                         + "==== Find item by id ====" + System.lineSeparator()
-                        + "Item{id=" + item.getId() + ", name='" + item.getName()
-                        + "', created=" + item.getCreated()
-                        + "}" + System.lineSeparator()
+                        + item + System.lineSeparator()
                         + "Menu." + System.lineSeparator()
                         + "0. Find item by id" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
@@ -174,7 +172,8 @@ public class StartUITest {
     public void whenFindItemByNameYes() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        Item item = tracker.add(new Item("First item"));
+        String name = "First item";
+        Item item = tracker.add(new Item(name));
         Input in = new StubInput(
                 new String[] {"0", String.valueOf(item.getName()), "1"}
         );
@@ -187,9 +186,7 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() + "0. Find items by name" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
                         + "==== Find items by name ====" + System.lineSeparator()
-                        + "Item{id=" + item.getId() + ", name='" + item.getName()
-                        + "', created=" + item.getCreated()
-                        + "}" + System.lineSeparator()
+                        + item + System.lineSeparator()
                         + "Menu." + System.lineSeparator() + "0. Find items by name"
                         + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()

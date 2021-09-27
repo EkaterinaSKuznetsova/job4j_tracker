@@ -1,5 +1,7 @@
 package ru.job4j.oop;
 
+import ru.job4j.ex.UserInputException;
+
 public class HierarchyUsage {
     public static void main(String[] args) {
         Car car = new Car();

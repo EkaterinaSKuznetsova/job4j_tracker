@@ -22,7 +22,7 @@ public class PassportOfficeTest {
         Citizen citizenNext = new Citizen("2f44a", "Petr Arsentev");
         PassportOffice office = new PassportOffice();
         office.add(citizen);
-        assertThat(office.add(citizenNext), is(false));
+        assertFalse(office.add(citizenNext));
     }
 
 }

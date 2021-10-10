@@ -1,5 +1,6 @@
 package ru.job4j.collection;
 import org.junit.Test;
+import ru.job4j.poly.PolyUsage;
 import ru.job4j.tracker.Item;
 
 import java.util.Arrays;
@@ -18,7 +19,7 @@ public class JobTest {
         Comparator<Job> cmpNamePriority = new SortJobByNameDec().thenComparing(new SortJobIdByPriorityDec());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
-                new Job("Fix bug", 1)
+                new Job("Impl task", 1)
         );
         assertThat(rsl, lessThan(0));
     }
@@ -28,7 +29,7 @@ public class JobTest {
         Comparator<Job> cmpNamePriority = new SortJobByNameInc().thenComparing(new SortJobIdByPriorityInc());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
-                new Job("Fix bug", 1)
+                new Job("Impl task", 1)
         );
         assertThat(rsl, greaterThan(0));
     }

@@ -16,8 +16,7 @@ public class JobTest {
 
     @Test
     public void whenComparatorByNameAndPriority() {
-        Comparator<Job> cmpNamePriority = new SortJobByNameDec().thenComparing(
-                new SortJobIdByPriorityDec());
+        Comparator<Job> cmpNamePriority = new SortJobByNameDec().thenComparing(new SortJobIdByPriorityDec());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
                 new Job("Impl task", 1)
@@ -27,8 +26,7 @@ public class JobTest {
 
     @Test
     public void whenComparatorByNameAndPriorityInc() {
-        Comparator<Job> cmpNamePriority = new SortJobByNameInc().thenComparing(
-                new SortJobIdByPriorityInc());
+        Comparator<Job> cmpNamePriority = new SortJobByNameInc().thenComparing(new SortJobIdByPriorityInc());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
                 new Job("Impl task", 1)
@@ -114,6 +112,9 @@ public class JobTest {
         assertThat(in.get(0).getPriority(), is(out.get(0).getPriority()));
         assertThat(in.get(1).getPriority(), is(out.get(1).getPriority()));
         assertThat(in.get(2).getPriority(), is(out.get(2).getPriority()));
+
     }
+
+
 
 }

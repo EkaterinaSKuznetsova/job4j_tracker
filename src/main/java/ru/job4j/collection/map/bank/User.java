@@ -2,7 +2,17 @@ package ru.job4j.collection.map.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс описывает модель пользователя банка
+ * @author Ekaterina Kuznetsova
+ * @version 1.0
+ */
+
 public class User {
+    /**
+     * класс пользователя банка содержит поля: номер паспорта и ФИО
+     */
+
     private String passport;
     private String username;
 

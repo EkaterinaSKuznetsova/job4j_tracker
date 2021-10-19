@@ -18,3 +18,7 @@ notifications:
       - ek.belogurova@gmail.com
     on_success: never # default: change
     on_failure: always # default: always
+
+env:
+  global:
+    - CODECOV_TOKEN = "574ea161-9458-4dd2-ab28-3aff4ac83825"

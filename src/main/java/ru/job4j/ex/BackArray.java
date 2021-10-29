@@ -10,6 +10,8 @@ public class BackArray {
             names[index] = names[names.length - 1 - index];
             names[names.length - 1 - index] = temp;
         }
+
+
         System.out.println(Arrays.toString(names));
     }
 }

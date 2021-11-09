@@ -39,12 +39,4 @@ public class PhoneDictionaryTest {
         ArrayList<Person> persons = phones.find("Bryansk");
         assertThat(persons.get(0).getPhone(), is("534872"));
     }
-
-    @Test
-    public void whenNoFind() {
-        PhoneDictionary phones = new PhoneDictionary();
-        phones.add(new Person("Petr", "Arsentev", "534872", "Bryansk"));
-        ArrayList<Person> persons = phones.find("Moskow");
-       assertThat(persons.size(), is(0));
-    }
 }

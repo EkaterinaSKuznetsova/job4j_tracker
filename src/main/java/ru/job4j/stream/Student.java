@@ -21,10 +21,15 @@ public class Student {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Student)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Student)) {
+            return false;
+        }
         Student student = (Student) o;
-        return getScore() == student.getScore() && Objects.equals(getSurname(), student.getSurname());
+        return getScore() == student.getScore()
+                && Objects.equals(getSurname(), student.getSurname());
     }
 
     @Override

@@ -53,12 +53,11 @@ public class BankService {
      */
 
     public User findByPassport(String passport) {
-        for (User key : users.keySet()) {
-            if (key.getPassport().equals(passport)) {
-                return key;
-            }
-        }
-        return null;
+         return users.keySet()
+                .stream()
+                .filter(u -> u.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
@@ -73,15 +72,15 @@ public class BankService {
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         if (null != user) {
-            List<Account> accountsUser = users.get(user);
-            for (Account account : accountsUser) {
-                if (account.getRequisite().equals(requisite)) {
-                    return account;
-                }
-            }
+            return users.get(user)
+                    .stream()
+                    .filter(u -> u.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
         }
         return null;
     }
+
     /**
      * Метод принимает на вход паспорт и реквизиты счета, с которого нужно списать сумму,
      * саму сумму списания и паспорт и реквизиты счета на который нужно зачислить сумму.

@@ -13,22 +13,22 @@ import ru.job4j.stream.Profiles;
 
 public class ProfilesTest {
     @Test
-    public void whenSpisokClientsDifferentAdress() {
+    public void whenSpisokClientsDifferentAddress() {
         List<Profile> client = List.of(
-                new Profile(new Adress("Saint - Peterburg", "Nevskiy pr.", 45, 54),
+                new Profile(new Address("Saint - Peterburg", "Nevskiy pr.", 45, 54),
                         "Vasiliy Petrov"),
-                new Profile(new Adress("Saint - Peterburg", "B. Morskay pr.", 76, 13),
+                new Profile(new Address("Saint - Peterburg", "B. Morskay pr.", 76, 13),
                         "Aleksey Gorshkov"),
-                new Profile(new Adress("Saint - Peterburg", "Liteinui pr.", 45, 90),
+                new Profile(new Address("Saint - Peterburg", "Liteinui pr.", 45, 90),
                         "Anna Novikova")
         );
-        List<Adress> rsl = List.of(
-                new Adress("Saint - Peterburg", "Nevskiy pr.", 45, 54),
-                new Adress("Saint - Peterburg", "B. Morskay pr.", 76, 13),
-                new Adress("Saint - Peterburg", "Liteinui pr.", 45, 90)
+        List<Address> rsl = List.of(
+                new Address("Saint - Peterburg", "Nevskiy pr.", 45, 54),
+                new Address("Saint - Peterburg", "B. Morskay pr.", 76, 13),
+                new Address("Saint - Peterburg", "Liteinui pr.", 45, 90)
         );
         Profiles pr = new Profiles();
-        List<Adress> expected = pr.collect(client);
+        List<Address> expected = pr.collect(client);
         assertThat(rsl, is(expected));
 
     }
@@ -36,24 +36,24 @@ public class ProfilesTest {
     @Test
     public void whenSpisokClientsWithSameAdress() {
         List<Profile> client = List.of(
-                new Profile(new Adress("Saint - Peterburg", "Nevskiy pr.", 45, 54),
+                new Profile(new Address("Saint - Peterburg", "Nevskiy pr.", 45, 54),
                         "Artem Volkov"),
-                new Profile(new Adress("Saint - Peterburg", "B. Morskay pr.", 76, 13),
+                new Profile(new Address("Saint - Peterburg", "B. Morskay pr.", 76, 13),
                         "Irina Ivanova"),
-                new Profile(new Adress("Saint - Peterburg", "Liteinui pr.", 45, 90),
+                new Profile(new Address("Saint - Peterburg", "Liteinui pr.", 45, 90),
                         "Alisa Selezneva"),
-                new Profile(new Adress("Saint - Peterburg", "B. Morskay pr.", 76, 13),
+                new Profile(new Address("Saint - Peterburg", "B. Morskay pr.", 76, 13),
                         "Vladimir Petrov"),
-                new Profile(new Adress("Saint - Peterburg", "B. Morskay pr.", 76, 13),
+                new Profile(new Address("Saint - Peterburg", "B. Morskay pr.", 76, 13),
                         "Dmitriy Sokolov")
         );
-        List<Adress> rsl = List.of(
-                new Adress("Saint - Peterburg", "Nevskiy pr.", 45, 54),
-                new Adress("Saint - Peterburg", "B. Morskay pr.", 76, 13),
-                new Adress("Saint - Peterburg", "Liteinui pr.", 45, 90)
+        List<Address> rsl = List.of(
+                new Address("Saint - Peterburg", "Nevskiy pr.", 45, 54),
+                new Address("Saint - Peterburg", "B. Morskay pr.", 76, 13),
+                new Address("Saint - Peterburg", "Liteinui pr.", 45, 90)
                 );
         Profiles pr = new Profiles();
-        List<Adress> expected = pr.collect(client);
+        List<Address> expected = pr.collect(client);
         assertThat(rsl, is(expected));
 
     }
@@ -61,26 +61,26 @@ public class ProfilesTest {
     @Test
     public void whenSpisokClientsWithDublicateAdress() {
         List<Profile> client = List.of(
-                new Profile(new Adress("Санкт - Петербург", "Невский проспект", 45, 54),
+                new Profile(new Address("Санкт - Петербург", "Невский проспект", 45, 54),
                         "Vasiliy Petrov"),
-                new Profile(new Adress("Волгоград", "Морская улица", 76, 13),
+                new Profile(new Address("Волгоград", "Морская улица", 76, 13),
                         "Aleksey Gorshkov"),
-                new Profile(new Adress("Астрахань", "Советсткий проспект", 45, 90),
+                new Profile(new Address("Астрахань", "Советсткий проспект", 45, 90),
                         "Anna Novikova"),
-                new Profile(new Adress("Санкт - Петербург", "Невский проспект", 45, 54),
+                new Profile(new Address("Санкт - Петербург", "Невский проспект", 45, 54),
                         "Elmira Petrova"),
-                new Profile(new Adress("Волгоград", "Морская улица", 76, 13),
+                new Profile(new Address("Волгоград", "Морская улица", 76, 13),
                         "Anna Gorshkova")
 
         );
-        List<Adress> rsl = List.of(
-                new Adress("Астрахань", "Советсткий проспект", 45, 90),
-                new Adress("Волгоград", "Морская улица", 76, 13),
-                new Adress("Санкт - Петербург", "Невский проспект", 45, 54)
+        List<Address> rsl = List.of(
+                new Address("Астрахань", "Советсткий проспект", 45, 90),
+                new Address("Волгоград", "Морская улица", 76, 13),
+                new Address("Санкт - Петербург", "Невский проспект", 45, 54)
 
         );
         Profiles pr = new Profiles();
-        List<Adress> expected = pr.collect(client);
+        List<Address> expected = pr.collect(client);
         assertThat(rsl, is(expected));
     }
 }

@@ -3,15 +3,15 @@ package ru.job4j.stream;
 import java.util.Objects;
 
 public class Profile {
-    private Adress address;
+    private Address address;
     private String name;
 
-    public Profile(Adress address, String name) {
+    public Profile(Address address, String name) {
         this.address = address;
         this.name = name;
     }
 
-    public Adress getAddress() {
+    public Address getAddress() {
         return address;
     }
 
@@ -37,4 +37,3 @@ public class Profile {
         return Objects.hash(getAddress(), getName());
     }
 }
-

@@ -98,7 +98,7 @@ public class JobTest {
 
     @Test
     public void whenComparatorByPriorityInc() {
-        List<Job> in =   List.of(
+        List<Job> in =   Arrays.asList(
                 new Job("Fix bug", 1),
                 new Job("Testing", 3),
                 new Job("Impl task", 0)

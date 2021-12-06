@@ -38,13 +38,13 @@ public class JobTest {
 
     @Test
     public void whenComparatorByNameInc() {
-        List<Job> in =   Arrays.asList(
+        List<Job> in =   List.of(
                 new Job("Fix bug", 1),
                 new Job("Testing", 3),
                 new Job("Impl task", 0)
 
         );
-        List<Job> out = Arrays.asList(
+        List<Job> out = List.of(
                 new Job("Fix bug", 1),
                 new Job("Impl task", 0),
                 new Job("Testing", 3)
@@ -58,13 +58,13 @@ public class JobTest {
 
     @Test
     public void whenComparatorByNameDec() {
-        List<Job> in =   Arrays.asList(
+        List<Job> in =   List.of(
                 new Job("Fix bug", 1),
                 new Job("Testing", 3),
                 new Job("Impl task", 0)
 
         );
-        List<Job> out = Arrays.asList(
+        List<Job> out = List.of(
                 new Job("Testing", 3),
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
@@ -78,13 +78,13 @@ public class JobTest {
 
     @Test
     public void whenComparatorByPriorityDec() {
-        List<Job> in =   Arrays.asList(
+        List<Job> in =   List.of(
                 new Job("Fix bug", 1),
                 new Job("Testing", 3),
                 new Job("Impl task", 0)
 
         );
-        List<Job> out = Arrays.asList(
+        List<Job> out = List.of(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1),
                 new Job("Testing", 3)
@@ -98,13 +98,13 @@ public class JobTest {
 
     @Test
     public void whenComparatorByPriorityInc() {
-        List<Job> in =   Arrays.asList(
+        List<Job> in =   List.of(
                 new Job("Fix bug", 1),
                 new Job("Testing", 3),
                 new Job("Impl task", 0)
 
         );
-        List<Job> out = Arrays.asList(
+        List<Job> out = List.of(
                 new Job("Testing", 3),
                 new Job("Fix bug", 1),
                 new Job("Impl task", 0)
